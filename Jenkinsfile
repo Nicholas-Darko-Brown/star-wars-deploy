@@ -29,7 +29,7 @@ pipeline {
         }
         success {
             withAWS(region:'eu-west-1',credentials:'aws-cred') {
-                sh 'aws ses send-email --from cloudamalitech@amalitech.org --to godfred.nsabo@amalitech.com --subject "Deployment Success" --text "Frontend-Challenge Deployment Passed"'
+                sh 'aws ses send-email --from cloudamalitech@amalitech.org --to godfred.nsabo@amalitech.com --subject "Deployment Success" --text "Frontend-Challenge-Nicholas Deployment Passed"'
             }
         }
         unstable {
@@ -37,7 +37,7 @@ pipeline {
         }
         failure {
             withAWS(region:'eu-west-1', credentials:'aws-cred') {
-                sh 'aws ses send-email --from cloudamalitech@amalitech.org --to godfred.nsabo@amalitech.com --subject "Deployment Failure" --text "Frontend-Challenge Deployment Failed"'
+                sh 'aws ses send-email --from cloudamalitech@amalitech.org --to godfred.nsabo@amalitech.com --subject "Deployment Failure" --text "Frontend-Challenge-Nicholas Deployment Failed"'
             }
         }
         changed {
