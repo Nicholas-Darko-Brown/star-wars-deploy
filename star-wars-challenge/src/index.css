@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
+
+a.nav-link {
+    font-weight: 600;
+    color: #000000;
+}
+
+a.nav-link:hover {
+    background-color: rgb(235, 195, 64);
+    border-radius: 5px;
+}
+
+img.align-top {
+    cursor: pointer;
+}
+
+.carousel-indicators,
+.carousel-caption {
+    margin-bottom: 60px;
+}
+
+.properties {
+    font-weight: 700;
+}
