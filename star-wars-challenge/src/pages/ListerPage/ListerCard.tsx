@@ -19,6 +19,7 @@ const ListerCard = ({ item }: any) => {
 
     navigate("/details");
   };
+  
 
   return (
     <ListerItem key={item?.uid}>

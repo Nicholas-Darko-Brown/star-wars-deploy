@@ -5,6 +5,7 @@ import {
 } from "react-bootstrap";
 import starWarsLogo from "../../assets/star-wars-logo.png";
 import { useNavigate } from "react-router-dom";
+import { FaList } from "react-icons/fa";
 
 const Header: React.FC = () => {
 
@@ -36,7 +37,7 @@ const Header: React.FC = () => {
             >
               <Nav.Link href="" onClick={() => {
                 navigate("/listerPage")
-              }}>Lister Page</Nav.Link>
+              }} className="lister">Lister Page  <FaList />  </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
