@@ -53,6 +53,8 @@ const ListerPage: React.FC = () => {
     return <ListerPageMessages>Error, try again!</ListerPageMessages>;
   if (isLoading) return <ListerPageMessages className='spinner-container'> <div className="loading-spinner"></div> </ListerPageMessages>;
 
+
+
   return (
     <ListerPageContainer>
       <ListerPageInput
@@ -60,6 +62,7 @@ const ListerPage: React.FC = () => {
         placeholder="Search by name..."
         className="me-2"
         aria-label="Search"
+        autoFocus
         onChange={(e) => setQuery(e.target.value)}
       />
 

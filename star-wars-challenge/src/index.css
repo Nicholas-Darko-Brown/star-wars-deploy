@@ -46,3 +46,12 @@ img.align-top {
     border-radius: 50%;
     animation: spinner 1.5s linear infinite;
   }
+
+  .lister {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background-color: #cacaca;
+    border-radius: 5px;
+  }

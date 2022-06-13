@@ -64,8 +64,15 @@ export const ListerPageBtn = styled.button`
 `;
 
 export const ListerPageInput = styled.input`
-  padding: 5px;
+  padding: 5px 10px;
   margin: 20px 0;
+  outline: 0;
+  border: 3px solid black;
+  border-radius: 5px;
+
+  &:focus {
+    border: 3px solid green;
+  }
 `;
 
 export const DetailsWrapper = styled.div`
@@ -77,10 +84,15 @@ export const DetailsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 40%;
+  padding: 0.5rem 0;
   margin: 0 auto;
   border-radius: 5px;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
 `;
 
 export const DetailsBtn = styled.button`
@@ -91,6 +103,10 @@ export const DetailsBtn = styled.button`
   font-weight: 500;
   padding: 5px 20px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 
   &:hover {
     background-color: rgb(235, 195, 64);
@@ -101,4 +117,5 @@ export const DetailsBtn = styled.button`
 
 export const DetailsTitle = styled.h2`
   text-decoration: underline;
+  margin-bottom: 1rem;
 `
