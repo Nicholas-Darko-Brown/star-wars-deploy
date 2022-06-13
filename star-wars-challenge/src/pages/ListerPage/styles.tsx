@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ListerPageContainer = styled.div`
-  margin: 56px 20px;
+  margin: 56px auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -56,9 +56,12 @@ export const ListerPageBtn = styled.button`
   padding: 5px 0;
   width: 50%;
   border-radius: 5px;
+  background-color: #7c7c7c;
+  color: white;
 
   &:hover {
     background-color: rgb(235, 195, 64);
+    color: #000000;
     transition: all 0.3s ease-out;
   }
 `;
