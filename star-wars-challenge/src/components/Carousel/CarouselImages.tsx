@@ -7,11 +7,11 @@ const CarouselImages: React.FC = () => {
   return (
     <Container>
       <Carousel>
-        {reviews.map((review) => (
-          <Carousel.Item key={review.id} interval={3000}>
-            <ImageWrapper src={review.image} className={review.className} alt={review.alt} />
+        {reviews.map((image) => (
+          <Carousel.Item key={image.id} interval={3000}>
+            <ImageWrapper src={image.image} className={image.className} alt={image.alt} />
             <Carousel.Caption>
-              <h1>{review.caption}</h1>
+              <h1>{image.caption}</h1>
             </Carousel.Caption>
           </Carousel.Item>
         ))}
