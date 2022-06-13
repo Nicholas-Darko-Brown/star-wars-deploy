@@ -37,12 +37,13 @@ export const ListerPageCard = styled.div`
 `;
 
 export const ListerItem = styled.h5`
-  background-color: gray;
+  background-color: #e9e9e9;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
 `;
 
 export const ListerContent = styled.p`

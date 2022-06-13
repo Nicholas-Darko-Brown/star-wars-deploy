@@ -13,13 +13,7 @@ const ListerPage: React.FC = () => {
   const [active, setActive] = useState<number>(1);
   const [isLoading, setLoading] = useState<boolean>(false);
   const [isError, setError] = useState<boolean>(false);
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let search = info.filter((list) =>
-      list.name.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-    setInfo(search);
-  };
+  const [query, setQuery] = useState("");
 
   let items = [];
   for (let number = 1; number <= 9; number++) {
@@ -55,8 +49,9 @@ const ListerPage: React.FC = () => {
     fetchData();
   }, [active]);
 
-  if (isError) return <ListerPageMessages>Error, try again!</ListerPageMessages>;
-  if (isLoading) return <ListerPageMessages>Loading...</ListerPageMessages>;
+  if (isError)
+    return <ListerPageMessages>Error, try again!</ListerPageMessages>;
+  if (isLoading) return <ListerPageMessages className='spinner-container'> <div className="loading-spinner"></div> </ListerPageMessages>;
 
   return (
     <ListerPageContainer>
@@ -65,13 +60,24 @@ const ListerPage: React.FC = () => {
         placeholder="Search by name..."
         className="me-2"
         aria-label="Search"
-        onChange={(e) => handleSearch(e)}
+        onChange={(e) => setQuery(e.target.value)}
       />
 
       <ListerPageCard>
-        {info.map((item) => (
-          <ListerCard item={item} />
-        ))}
+        {info
+          .filter((item) => {
+            if (query === "") return item;
+
+            if (
+              item.name.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+            )
+              return item;
+
+            return false;
+          })
+          .map((item) => (
+            <ListerCard key={item?.uid} item={item} />
+          ))}
       </ListerPageCard>
 
       <Pagination
@@ -80,7 +86,7 @@ const ListerPage: React.FC = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          margin: "25px auto 40px auto"
+          margin: "25px auto 40px auto",
         }}
       >
         {items}
