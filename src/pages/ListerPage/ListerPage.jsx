@@ -8,11 +8,11 @@ import {
 } from "./styles";
 import ListerCard from "./ListerCard";
 
-const ListerPage: React.FC = () => {
-  const [info, setInfo] = useState<any[]>([]);
-  const [active, setActive] = useState<number>(1);
-  const [isLoading, setLoading] = useState<boolean>(false);
-  const [isError, setError] = useState<boolean>(false);
+const ListerPage = () => {
+  const [info, setInfo] = useState([]);
+  const [active, setActive] = useState(1);
+  const [isLoading, setLoading] = useState(false);
+  const [isError, setError] = useState(false);
   const [query, setQuery] = useState("");
 
   let items = [];
