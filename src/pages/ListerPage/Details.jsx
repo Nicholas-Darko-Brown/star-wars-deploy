@@ -4,7 +4,7 @@ import { DetailsBtn, DetailsContainer, DetailsTitle, DetailsWrapper } from "./st
 import { PeopleState } from "./Context";
 import { BiArrowBack } from "react-icons/bi";
 
-const Details: React.FC = () => {
+const Details = () => {
   const { people } = PeopleState();
   
   const navigate = useNavigate();

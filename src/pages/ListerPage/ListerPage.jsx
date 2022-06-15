@@ -36,9 +36,6 @@ const ListerPage = () => {
     [active],
   )
 
-
-
-
   useEffect(() => {
     fetchData();
   }, [fetchData]);
