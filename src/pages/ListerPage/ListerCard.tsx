@@ -2,7 +2,7 @@ import { ListerContent, ListerItem, ListerPageBtn } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { PeopleState } from "./Context";
 
-const ListerCard = ({ item }: any) => {
+const ListerCard: React.FC = ({ item }: any) => {
   const { setPeople } = PeopleState();
   const navigate = useNavigate();
 

@@ -49,11 +49,8 @@ const ListerPage: React.FC = () => {
     fetchData();
   }, [active]);
 
-  if (isError)
-    return <ListerPageMessages>Error, try again!</ListerPageMessages>;
-  if (isLoading) return <ListerPageMessages className='spinner-container'> <div className="loading-spinner"></div> </ListerPageMessages>;
-
-
+  if (isError) return <ListerPageMessages>Error, try again!</ListerPageMessages>;
+  if (isLoading) return (<ListerPageMessages className="spinner-container"><div className="loading-spinner"></div></ListerPageMessages>);
 
   return (
     <ListerPageContainer>
@@ -71,15 +68,12 @@ const ListerPage: React.FC = () => {
           .filter((item) => {
             if (query === "") return item;
 
-            if (
-              item.name.toLocaleLowerCase().includes(query.toLocaleLowerCase())
-            )
-              return item;
+            if (item.name.toLocaleLowerCase().includes(query.toLocaleLowerCase())) return item;
 
-            return false;
+            return false
           })
-          .map((item) => (
-            <ListerCard key={item?.uid} item={item} />
+          .map((item)  => (
+            <ListerCard key={item?.uid} item={item}  />
           ))}
       </ListerPageCard>
 

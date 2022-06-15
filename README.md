@@ -1,50 +1,46 @@
-# AmaliTech-Frontend-Challenge
-### Please follow the Steps to set up the project locally on your machine and contribute to the Project
+# Getting Started with Create React App
 
-**1. Open your terminal**
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**2. Navigate to the location you want the project to be**
+## Available Scripts
 
-**3. Clone the repository**
-##### Note: Be sure to have Git installed on your workstation
->**Follow this link to install Git if you do not have it installed already. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
->Proceed to cloning if you already have Git installed** 
-```
-git clone https://github.com/Amali-Tech/AmaliTech-Frontend-Challenge.git
-```
+In the project directory, you can run:
 
-**4. Open the project in your IDE or Editor... Visual Studio Code is recommended with Sonarlint Extension installed**
+### `npm start`
 
-**5. Be on the 'dev' branch**
-```
-git checkout dev
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-**6. Run the commmand below to install all packages**
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-***^. Run the react create-app --typscript command to create your react app**
->**Note: Follow this link to get Node running on your machine. If you have Node JS installed already, skip this and install the packages** 
-[Node](https://nodejs.org/en/download/)
-```
-yarn install
-```
-OR
-```
-npm install
-```
+### `npm test`
 
-**7. You are ready to start the application locally now. Run the command below**
-```
-yarn start
-```
-OR 
-```
-npm start
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**8. Create a new branch  from 'dev' branch and start contributing**
-```
-git checkout -b <branch-name>
-```
+### `npm run build`
 
-**Happy Coding**
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
