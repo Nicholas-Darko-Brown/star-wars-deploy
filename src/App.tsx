@@ -9,15 +9,15 @@ import Context from "./pages/ListerPage/Context";
 const App = () => {
   return (
     <Context>
-    <Router>
-      <Header />
+      <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/listerPage" element={<ListerPage />} />
           <Route path="/details" element={<Details />} />
         </Routes>
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
     </Context>
   );
 };
