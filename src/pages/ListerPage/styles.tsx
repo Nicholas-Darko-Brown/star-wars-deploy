@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import StarWarsImg from "../../assets/starWars4.webp"
 
 export const ListerPageContainer = styled.div`
   margin: 56px auto;
@@ -7,8 +8,11 @@ export const ListerPageContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  border-radius: 5px;
+  min-height: 92vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(${StarWarsImg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const ListerPageMessages = styled.h1`
@@ -37,7 +41,7 @@ export const ListerPageCard = styled.div`
 `;
 
 export const ListerItem = styled.h5`
-  background-color: #e9e9e9;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
