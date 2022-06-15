@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Pagination } from "react-bootstrap";
 import {
   ListerPageCard,
@@ -8,30 +8,16 @@ import {
 } from "./styles";
 import ListerCard from "./ListerCard";
 
-const ListerPage: React.FC = () => {
-  const [info, setInfo] = useState<any[]>([]);
-  const [active, setActive] = useState<number>(1);
-  const [isLoading, setLoading] = useState<boolean>(false);
-  const [isError, setError] = useState<boolean>(false);
+const ListerPage = () => {
+  const [info, setInfo] = useState([]);
+  const [active, setActive] = useState(1);
+  const [isLoading, setLoading] = useState(false);
+  const [isError, setError] = useState(false);
   const [query, setQuery] = useState("");
 
-  let items = [];
-  for (let number = 1; number <= 9; number++) {
-    items.push(
-      <Pagination.Item
-        key={number}
-        active={number === active}
-        onClick={() => {
-          setActive(number);
-        }}
-      >
-        {number}
-      </Pagination.Item>
-    );
-  }
+  const fetchData = useCallback(
 
-  useEffect(() => {
-    const fetchData = async () => {
+    async () => {
       setError(false);
       setLoading(true);
 
@@ -45,12 +31,20 @@ const ListerPage: React.FC = () => {
         setError(true);
       }
       setLoading(false);
-    };
+    },
+
+    [active],
+  )
+
+
+
+
+  useEffect(() => {
     fetchData();
-  }, [active]);
+  }, [fetchData]);
 
   if (isError) return <ListerPageMessages>Error, try again!</ListerPageMessages>;
-  if (isLoading) return (<ListerPageMessages className="spinner-container"><div className="loading-spinner"></div></ListerPageMessages>);
+  if (isLoading) return <ListerPageMessages className="spinner-container"><div className="loading-spinner"></div></ListerPageMessages>;
 
   return (
     <ListerPageContainer>
@@ -72,8 +66,8 @@ const ListerPage: React.FC = () => {
 
             return false
           })
-          .map((item)  => (
-            <ListerCard key={item?.uid} item={item}  />
+          .map((item) => (
+            <ListerCard key={item?.uid} item={item} />
           ))}
       </ListerPageCard>
 
@@ -86,7 +80,24 @@ const ListerPage: React.FC = () => {
           margin: "25px auto 40px auto",
         }}
       >
-        {items}
+        {new Array(10).fill(0).map((_, index) => {
+          if (index !== 0) {
+            return (
+              <Pagination.Item
+                key={index}
+                active={index === active}
+                onClick={() => {
+                  setActive(index);
+                }}
+              >
+                {index}
+              </Pagination.Item>
+
+            );
+          } else {
+            return <></>
+          }
+        })}
       </Pagination>
     </ListerPageContainer>
   );

@@ -13,9 +13,7 @@ const ListerCard: React.FC = ({ item }: any) => {
       setPeople(jsonResponse.result);
     } catch (error) {
       console.log(error);
-      
     }
-
 
     navigate("/details");
   };
