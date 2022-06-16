@@ -11,6 +11,8 @@ const ListerCard: React.FC = ({ item }: any) => {
       const response = await fetch(`https://www.swapi.tech/api/people/${id}`);
       const jsonResponse = await response.json();
       setPeople(jsonResponse.result);
+      console.log(jsonResponse.result);
+      
     } catch (error) {
       console.log(error);
     }

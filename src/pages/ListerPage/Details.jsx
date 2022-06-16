@@ -8,6 +8,8 @@ const Details = () => {
   
   const navigate = useNavigate();
 
+  console.log(people);
+
   return (
     <DetailsWrapper>
       <DetailsBtn

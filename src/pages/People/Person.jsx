@@ -1,23 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import { PeopleState } from "../ListerPage/Context";
 
-
 const Person = ({ person }) => {
-    const navigate = useNavigate();
-    const { setPeople } = PeopleState();
+  const navigate = useNavigate();
+  const { setPeople } = PeopleState();
 
-    const handleDetails = async (id) => {
-        try {
-          const response = await fetch(`https://www.swapi.tech/api/people/${id}`);
-          const jsonResponse = await response.json();
-          setPeople(jsonResponse.result);
-        } catch (error) {
-          console.log(error);
-        }
-    
-        navigate("/peopleDetails");
-      };
+  const handleDetails = async (id) => {
+    try {
+      const response = await fetch(`https://www.swapi.tech/api/people/${id}`);
+      const jsonResponse = await response.json();
+      setPeople(jsonResponse.result);
+    } catch (error) {
+      console.log(error);
+    }
 
+    navigate("/peopleDetails");
+  };
+
+  console.log(person);
 
   return (
     <div className="card" key={person?.url}>
@@ -25,7 +25,7 @@ const Person = ({ person }) => {
       <p>Skin Color - {person.skin_color}</p>
       <p>Birth Year - {person.birth_year}</p>
 
-      <button person={person} onClick={() => handleDetails(person.url)}>More</button>
+        <button onClick={() => handleDetails(person.url)}>More</button>
     </div>
   );
 };
