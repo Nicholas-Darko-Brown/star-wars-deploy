@@ -8,7 +8,7 @@ const ListerCard: React.FC = ({ item }: any) => {
 
   const handleDetails = async (id: number) => {
     try {
-      const response = await fetch(`${process.env.STAWRS_API}people/${id}`);
+      const response = await fetch(`${process.env.REACT_APP_STAWRS_API}people/${id}`);
       const jsonResponse = await response.json();
       setPeople(jsonResponse.result);
       console.log(jsonResponse.result);
