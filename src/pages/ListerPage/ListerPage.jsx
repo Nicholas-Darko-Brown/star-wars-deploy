@@ -81,7 +81,7 @@ const ListerPage = () => {
           if (index !== 0) {
             return (
               <Pagination.Item
-                key={index}
+              key={index}
                 active={index === active}
                 onClick={() => {
                   setActive(index);
@@ -89,11 +89,13 @@ const ListerPage = () => {
               >
                 {index}
               </Pagination.Item>
-
             );
           } else {
             return <></>
           }
+
+          
+
         })}
       </Pagination>
     </ListerPageContainer>
