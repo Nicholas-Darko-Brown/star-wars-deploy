@@ -7,7 +7,6 @@ import Details from "./pages/ListerPage/Details";
 import Context from "./pages/ListerPage/Context";
 import People from "./pages/People/People";
 import { QueryClient, QueryClientProvider } from "react-query";
-import PeopleDetails from "./pages/People/PeopleDetails";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +21,6 @@ const App = () => {
             <Route path="/listerPage" element={<ListerPage />} />
             <Route path="/details" element={<Details />} />
             <Route path="/people" element={<People />} />
-            <Route path="/peopleDetails" element={<PeopleDetails />} />
           </Routes>
           <Footer />
         </Router>

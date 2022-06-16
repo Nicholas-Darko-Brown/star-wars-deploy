@@ -23,7 +23,7 @@ const ListerPage = () => {
 
       try {
         const getPeople = await fetch(
-          `https://www.swapi.tech/api/people?page=${active}&limit=10`
+          `${process.env.STAWRS_API}people?page=${active}&limit=10`
         );
         const response = await getPeople.json();
         setInfo(response.results);
