@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { DetailsBtn, DetailsContainer, DetailsTitle, DetailsWrapper } from "./styles";
 import { PeopleState } from "./Context";
@@ -8,7 +7,7 @@ const Details = () => {
   const { people } = PeopleState();
   
   const navigate = useNavigate();
-  
+
   return (
     <DetailsWrapper>
       <DetailsBtn
