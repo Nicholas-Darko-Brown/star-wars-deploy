@@ -4,12 +4,15 @@ const DetailContext = createContext();
 
 const Context = ({ children }) => {
   const [people, setPeople] = useState();
+  const [visited, setVisited] = useState([]);
 
   return (
     <DetailContext.Provider
       value={{
         people,
         setPeople,
+        visited,
+        setVisited
       }}
     >
       {children}
