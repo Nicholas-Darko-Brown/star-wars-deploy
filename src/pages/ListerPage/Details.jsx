@@ -8,7 +8,8 @@ const Details = () => {
   
   const navigate = useNavigate();
 
-  console.log(people);
+  let movies = []
+ 
 
   return (
     <DetailsWrapper>
@@ -22,14 +23,22 @@ const Details = () => {
 
       <DetailsContainer>
         <DetailsTitle>Details</DetailsTitle>
-        <p> <span className="properties">Name:</span>  {people?.properties?.name} </p>
-        <p> <span className="properties">Birth year:</span>  {people?.properties?.birth_year} </p>
-        <p> <span className="properties">Eye color:</span> {people?.properties?.eye_color}</p>
-        <p><span className="properties">Gender:</span> {people?.properties?.gender}</p>
-        <p><span className="properties">Hair color:</span> {people?.properties?.hair_color}</p>
-        <p><span className="properties">Height:</span> {people?.properties?.height}</p>
-        <p><span className="properties">Skin color:</span> {people?.properties?.skin_color}</p>
-        <p><span className="properties">Mass:</span> {people?.properties?.mass} </p>
+        <p> <span className="properties">Name:</span>  {people?.name} </p>
+        <p> <span className="properties">Eye color:</span> {people?.eye_color}</p>
+        <p><span className="properties">Hair color:</span> {people?.hair_color}</p>
+        <p><span className="properties">Height:</span> {people?.height}</p>
+        <p><span className="properties">Skin color:</span> {people?.skin_color}</p>
+        <p><span className="properties">Mass:</span> {people?.mass} </p>
+        <p><span className="properties">Films:</span> </p>
+
+      
+        {people?.films.forEach(async (film) =>{ 
+          const fetchData = await fetch(film)
+          const response = await fetchData.json()
+          movies.push(response.title)
+          console.log(movies);
+        })}
+
       </DetailsContainer>
     </DetailsWrapper>
   );
