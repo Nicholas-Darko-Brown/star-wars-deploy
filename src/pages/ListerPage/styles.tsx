@@ -85,7 +85,7 @@ export const DetailsContainer = styled.div`
 `;
 
 export const DetailsBtn = styled.button`
-  margin: 65px auto 0 20px;
+  margin: 65px auto 30px 20px;
   border: none;
   background-color: #000000;
   color: white;
