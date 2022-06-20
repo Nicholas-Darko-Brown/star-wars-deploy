@@ -3,7 +3,6 @@ import { Pagination } from "react-bootstrap";
 import {
   ListerPageCard,
   ListerPageContainer,
-  ListerPageInput,
   ListerPageMessages,
 } from "./styles";
 import ListerCard from "./ListerCard";
@@ -13,7 +12,6 @@ const ListerPage = () => {
   const [active, setActive] = useState(1);
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
-  const [query, setQuery] = useState("");
 
   const fetchData = useCallback(async () => {
     setError(false);
@@ -45,24 +43,9 @@ const ListerPage = () => {
 
   return (
     <ListerPageContainer>
-      <ListerPageInput
-        type="search"
-        placeholder="Search by name..."
-        className="me-2"
-        aria-label="Search"
-        autoFocus
-        onChange={(e) => setQuery(e.target.value)}
-      />
 
       <ListerPageCard>
-        {info.filter((item) => {
-            if (query === "") return item;
-
-            if (item.name.toLocaleLowerCase().includes(query.toLocaleLowerCase())) return item;
-
-            return false;
-            
-          }).map((item) => (
+        {info.map((item) => (
             <ListerCard key={item?.url} item={item} />
           ))}
       </ListerPageCard>
