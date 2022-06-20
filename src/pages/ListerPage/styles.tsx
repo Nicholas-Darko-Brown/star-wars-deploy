@@ -66,18 +66,6 @@ export const ListerPageBtn = styled.button`
   }
 `;
 
-export const ListerPageInput = styled.input`
-  padding: 5px 10px;
-  margin: 20px 0;
-  outline: 0;
-  border: 3px solid black;
-  border-radius: 5px;
-
-  &:focus {
-    border: 3px solid green;
-  }
-`;
-
 export const DetailsWrapper = styled.div``;
 
 export const DetailsContainer = styled.div`
@@ -126,7 +114,6 @@ export const SearchContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* min-height: 88vh; */
   margin: 80px 0;
   max-width: 100%;
 `;
