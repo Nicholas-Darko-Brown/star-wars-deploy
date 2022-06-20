@@ -15,33 +15,33 @@ const ListerPage = () => {
   const [isError, setError] = useState(false);
   const [query, setQuery] = useState("");
 
-  const fetchData = useCallback(
+  const fetchData = useCallback(async () => {
+    setError(false);
+    setLoading(true);
 
-    async () => {
-      setError(false);
-      setLoading(true);
-
-      try {
-        const getPeople = await fetch(
-          `${process.env.REACT_APP_STAWRS_API}people?page=${active}&limit=10`
-        );
-        const response = await getPeople.json();
-        setInfo(response.results);
-      } catch (error) {
-        setError(true);
-      }
-      setLoading(false);
-    },
-
-    [active],
-  )
+    try {
+      const getPeople = await fetch(
+        `${process.env.REACT_APP_STAWRS_API}people?page=${active}&limit=10`
+      );
+      const response = await getPeople.json();
+      setInfo(response.results);
+    } catch (error) {
+      setError(true);
+    }
+    setLoading(false);
+  }, [active]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
   if (isError) return <ListerPageMessages>Error, try again!</ListerPageMessages>;
-  if (isLoading) return <ListerPageMessages className="spinner-container"><div className="loading-spinner"></div></ListerPageMessages>;
+  if (isLoading)
+    return (
+      <ListerPageMessages className="spinner-container">
+        <div className="loading-spinner"></div>
+      </ListerPageMessages>
+    );
 
   return (
     <ListerPageContainer>
@@ -55,16 +55,15 @@ const ListerPage = () => {
       />
 
       <ListerPageCard>
-        {info
-          .filter((item) => {
+        {info.filter((item) => {
             if (query === "") return item;
 
             if (item.name.toLocaleLowerCase().includes(query.toLocaleLowerCase())) return item;
 
-            return false
-          })
-          .map((item) => (
-            <ListerCard key={item?.uid} item={item} />
+            return false;
+            
+          }).map((item) => (
+            <ListerCard key={item?.url} item={item} />
           ))}
       </ListerPageCard>
 
@@ -81,7 +80,7 @@ const ListerPage = () => {
           if (index !== 0) {
             return (
               <Pagination.Item
-              key={index}
+                key={index}
                 active={index === active}
                 onClick={() => {
                   setActive(index);
@@ -91,11 +90,8 @@ const ListerPage = () => {
               </Pagination.Item>
             );
           } else {
-            return <></>
+            return <div key={index}></div>;
           }
-
-          
-
         })}
       </Pagination>
     </ListerPageContainer>
