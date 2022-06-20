@@ -55,7 +55,6 @@ const Header: FC = () => {
                   navigate("/searchBox");
                 }}
                 className="lister"
-                style={{marginLeft: "10px"}}
               >
                 Detail Search <FiSearch />{" "}
               </Nav.Link>
