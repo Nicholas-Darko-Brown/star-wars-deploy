@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import Logo from "../../assets/star-wars-logo.png";
 import { FooterContainer } from "./styles";
 import { useNavigate } from "react-router-dom";
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   const navigate = useNavigate()
 
   const currentYear: number = new Date().getFullYear();
