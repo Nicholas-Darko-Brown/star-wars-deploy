@@ -54,6 +54,7 @@ img.align-top {
   gap: 0.8rem;
   background: rgb(255, 201, 25);
   border-radius: 5px;
+  margin: 2px 5px;
 }
 
 .navbar {
