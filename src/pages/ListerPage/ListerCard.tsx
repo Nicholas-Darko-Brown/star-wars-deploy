@@ -1,18 +1,28 @@
-import { ListerContent, ListerItem, ListerPageBtn } from "./styles";
+import { ListerItem, ListerPageBtn } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { PeopleState } from "./Context";
+import { FC } from "react";
 
-const ListerCard: React.FC = ({ item }: any) => {
-  const { setPeople } = PeopleState();
+const ListerCard: FC = ({ item }: any) => {
+  const { visited, setPeople, setVisited } = PeopleState();
   const navigate = useNavigate();
 
-  const handleDetails = async (id: number) => {
+  const handleDetails = async (id: string) => {
+    if(visited[2]){
+      visited.shift();
+      visited.push({id: id, character: item.name});
+      setVisited(visited)
+      localStorage.setItem('visits', visited)
+    }else {
+      visited.push({id: id, character: item.name});
+      setVisited(visited);
+      localStorage.setItem('visits', visited)
+    }
+    
     try {
-      const response = await fetch(`${process.env.REACT_APP_STAWRS_API}people/${id}`);
+      const response = await fetch(id);
       const jsonResponse = await response.json();
-      setPeople(jsonResponse.result);
-      console.log(jsonResponse.result);
-      
+      setPeople(jsonResponse);
     } catch (error) {
       console.log(error);
     }
@@ -23,11 +33,11 @@ const ListerCard: React.FC = ({ item }: any) => {
 
   return (
     <ListerItem key={item?.uid}>
-      {item?.name}
+      <h5>{item?.name}</h5> 
+      <span> <span className="item-keys">DOB:</span> {item?.birth_year} </span> 
+      <span> <span className="item-keys">Gender:</span> {item?.gender} </span>
 
-      <ListerContent>A person within the Star Wars universe</ListerContent>
-
-      <ListerPageBtn onClick={() => handleDetails(item.uid)}>
+      <ListerPageBtn onClick={() => handleDetails(item?.url)}>
         Details
       </ListerPageBtn>
     </ListerItem>
