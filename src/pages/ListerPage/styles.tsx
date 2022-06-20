@@ -3,6 +3,7 @@ import StarWarsImg from "../../assets/starWars4.webp";
 
 export const ListerPageContainer = styled.div`
   margin: 56px auto;
+  padding-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
