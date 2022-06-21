@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {FC} from 'react'
 import CarouselImages from '../../components/Carousel/CarouselImages'
 
-const Home: React.FC = () => {
+const Home: FC = () => {
   return (
     <main>
         <CarouselImages />

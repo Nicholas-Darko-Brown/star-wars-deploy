@@ -1,9 +1,9 @@
-
+import { FC } from "react"
 import { Container, ImageWrapper } from "./styles";
 import { reviews } from "./data";
 import { Carousel } from "react-bootstrap";
 
-const CarouselImages: React.FC = () => {
+const CarouselImages:FC = () => {
   return (
     <Container>
       <Carousel>

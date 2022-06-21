@@ -54,9 +54,31 @@ img.align-top {
   gap: 0.8rem;
   background: rgb(255, 201, 25);
   border-radius: 5px;
+  margin: 2px 5px;
 }
 
 .navbar {
   background: rgb(231,231,231);
   background: linear-gradient(90deg, rgba(231,231,231,1) 5%, rgba(255,255,255,1) 86%);
+}
+
+.item-keys,
+.visited-pages,
+.search-keys {
+  font-weight: 500;
+}
+
+.dropdown {
+  width: 13rem;
+}
+
+.form-container {
+  display: flex;
+  gap: 0.8rem;
+}
+
+@media (max-width: 400px) {
+  .search-text {
+    display: none;
+  }
 }

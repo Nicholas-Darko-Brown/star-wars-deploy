@@ -1,14 +1,20 @@
 import styled from "styled-components";
+import StarWarsImg from "../../assets/starWars4.webp";
 
 export const ListerPageContainer = styled.div`
   margin: 56px auto;
+  padding-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  border-radius: 5px;
+  min-height: 92vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
+    url(${StarWarsImg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const ListerPageMessages = styled.h1`
@@ -31,24 +37,19 @@ export const ListerPageCard = styled.div`
   }
 
   @media (max-width: 520px) {
-    grid-template-columns: repeat(1, 250px);
+    grid-template-columns: repeat(1, 225px);
     grid-template-rows: repeat(10, 180px);
   }
 `;
 
-export const ListerItem = styled.h5`
-  background-color: #e9e9e9;
+export const ListerItem = styled.div`
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
-`;
-
-export const ListerContent = styled.p`
-  font-weight: 400;
-  font-size: 16px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
 `;
 
 export const ListerPageBtn = styled.button`
@@ -66,21 +67,7 @@ export const ListerPageBtn = styled.button`
   }
 `;
 
-export const ListerPageInput = styled.input`
-  padding: 5px 10px;
-  margin: 20px 0;
-  outline: 0;
-  border: 3px solid black;
-  border-radius: 5px;
-
-  &:focus {
-    border: 3px solid green;
-  }
-`;
-
-export const DetailsWrapper = styled.div`
-  
-`
+export const DetailsWrapper = styled.div``;
 
 export const DetailsContainer = styled.div`
   display: flex;
@@ -91,7 +78,7 @@ export const DetailsContainer = styled.div`
   padding: 0.5rem 0;
   margin: 0 auto;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
     width: 70%;
@@ -99,7 +86,7 @@ export const DetailsContainer = styled.div`
 `;
 
 export const DetailsBtn = styled.button`
-  margin: 75px auto 35px 20px;
+  margin: 65px auto 30px 20px;
   border: none;
   background-color: #000000;
   color: white;
@@ -121,4 +108,65 @@ export const DetailsBtn = styled.button`
 export const DetailsTitle = styled.h2`
   text-decoration: underline;
   margin-bottom: 1rem;
+`;
+
+export const SearchContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 80px 0;
+  max-width: 100%;
+`;
+
+export const SearchItemsContainer = styled.div`
+  box-shadow: 0px -3px 30px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  width: 15.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+
+  @media (max-width: 900px) {
+    width: 17rem;
+  }
+  @media (max-width: 400px) {
+    width: 14rem;
+  }
+`;
+
+export const SearchWrapper = styled.div`
+  max-width: 68rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0 auto;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 15.625rem);
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 250px);
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 280px);
+  }
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1, 280px);
+  }
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(1, 225px);
+  }
+`;
+
+export const SearchItem = styled.h2`
+  margin-top: 1.5rem;
+`
+
+export const SearchTitle = styled.h1`
+    @media (max-width: 400px) {
+      display: none;
+  }
 `
